@@ -1,4 +1,4 @@
-import { Icon, Text, HStack } from '@chakra-ui/react';
+import { Icon, Text, HStack, Wrap, WrapItem } from '@chakra-ui/react';
 import { Platform } from '../assets/hooks/useGames';
 import {FaWindows, FaPlaystation, FaXbox, FaApple, FaLinux, FaAndroid} from 'react-icons/fa'
 import {MdPhoneIphone} from 'react-icons/md'
@@ -22,11 +22,13 @@ const PlatformIconList = ({platforms}:Props) => {
         nintendo: SiNintendo
     }
   return (
-    <HStack marginY='2'>
+    <Wrap marginY='2'>
     {platforms.map((platform) => 
-        <Icon as={iconMap[platform.slug]} color='gray.400'/>
+        <WrapItem>
+            <Icon as={iconMap[platform.slug]} color='gray.400'/>
+        </WrapItem>
     )}
-    </HStack>
+    </Wrap>
   )
 }
 
