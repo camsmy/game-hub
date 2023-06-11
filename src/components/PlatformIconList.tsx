@@ -24,7 +24,7 @@ const PlatformIconList = ({platforms}:Props) => {
   return (
     <Wrap marginY='2'>
     {platforms.map((platform) => 
-        <WrapItem>
+        <WrapItem key={platform.id}>
             <Icon as={iconMap[platform.slug]} color='gray.400'/>
         </WrapItem>
     )}
